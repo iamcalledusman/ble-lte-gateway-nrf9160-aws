@@ -1,0 +1,14 @@
+{
+  "nrf-connect.topdir": "${nrf-connect.sdk:2.4.0}",
+  "nrf-connect.toolchain.path": "${nrf-connect.toolchain:2.4.0}",
+  "files.associations": {
+    "sensor_module_event.h": "c",
+    "json_helpers.h": "c",
+    "uart_1_event.h": "c",
+    "json_protocol_names_nrf_cloud.h": "c",
+    "json_protocol_names.h": "c",
+    "json_protocol_names_aws_iot.h": "c",
+    "aws_fota.h": "c"
+  },
+  "C_Cpp.intelliSenseEngineFallback": "enabled"
+}

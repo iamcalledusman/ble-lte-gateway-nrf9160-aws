@@ -1,0 +1,71 @@
+/	{
+
+
+	chosen {
+		zephyr,console = &uart0;
+		zephyr,shell-uart = &uart1;   // for receiving data from nrf52833(P0.6 tx and P0.8 Rx),nrf9160 (P0.0 Rx and P0.1 Tx)
+		zephyr,uart-mcumgr = &uart0;
+	};
+
+	/delete-node/ leds;
+
+	leds0 {
+		compatible = "gpio-leds";
+		status = "okay";
+		label = "LED0";
+		led0: led_0 {
+			status = "okay";
+			gpios = <&gpio0 2 0>;
+			label = "Green LED 1";
+		};
+	};
+
+	leds1 {
+		compatible = "gpio-leds";
+		status = "okay";
+		label = "LED1";
+		led1: led_1 {
+			gpios = <&gpio0 3 0>;
+			label = "Green LED 2";
+		};
+	};
+
+	leds2 {
+		compatible = "gpio-leds";
+		status = "okay";
+		label = "LED2";
+		led2: led_2 {
+			gpios = <&gpio0 4 0>;
+			label = "Green LED 3";
+		};
+	};
+
+	leds3 {
+		compatible = "gpio-leds";
+		status = "okay";
+		label = "LED3";
+		led3: led_3 {
+			gpios = <&gpio0 5 0>;
+			label = "Green LED 4";
+		};
+	};
+};
+
+/* Enable high drive mode for the SPI3 pins to get a square signal at 8 MHz */
+&spi3_default {
+	group1 {
+		nordic,drive-mode = <NRF_DRIVE_H0H1>;
+	};
+};
+
+&uart1 {
+	status = "okay";
+	current-speed = <115200>;
+	pinctrl-0 = <&uart1_default>;
+	pinctrl-1 = <&uart1_sleep>;
+	pinctrl-names = "default", "sleep";
+
+	
+	
+
+};
